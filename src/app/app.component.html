@@ -1,3 +1,9 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<h1>The Angular To Do App</h1>
+
+<h2>The To Dos</h2>
+<ul>
+  <li *ngFor="let todo of todos">
+    <h3>{{ todo.title }}</h3>
+    <h4>{{ todo.body }}</h4>
+  </li>
+</ul>
