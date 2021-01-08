@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   editBody: string = '';
   editId: number = 0;
 
-  // Function to get list of To Dos from backend
+  // Get list of To Dos from backend
   async getTodos() {
     const response = await fetch(this.baseUrl);
     const data = await response.json();
@@ -74,6 +74,17 @@ export class AppComponent implements OnInit {
     this.editTitle = '';
     this.editBody = '';
     this.editId = 0;
+  }
+
+  ///////////
+  // DELETE
+  //////////
+  async deleteTodo(todo) {
+    await fetch(this.baseUrl + '/' + todo.id, {
+      method: 'delete',
+    });
+    // Update the list
+    this.getTodos();
   }
   // This function runs when the component Loads (think React.useEffect)
   ngOnInit() {
