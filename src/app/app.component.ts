@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
       }),
     });
 
-    // Update the todo list and reset the form
+    // Get the updated list and then reset the form
     this.getTodos();
     this.createTitle = '';
     this.createBody = '';
